@@ -5,7 +5,7 @@ import Layout from "../components/Layout"
 import Form from '../components/Form'
 import { useRouter } from 'next/router'
 
-const Home: React.FC<Props> = (props) => {
+const Home = () => {
   const router = useRouter()
 
   const onSubmit = async (data) => {
@@ -28,7 +28,10 @@ const Home: React.FC<Props> = (props) => {
       <div className="page">
         <h1>Application</h1>
         <main>
-          <Form onSubmit={onSubmit} formSubmitText={"Submit"} />
+          <Form onSubmit={onSubmit} formSubmitText={"Submit"} defaultData={{
+            vehicles: [{ vin: '', year: '', make: '', model: '' }],
+            people: []
+          }} />
         </main>
       </div>
     </Layout>

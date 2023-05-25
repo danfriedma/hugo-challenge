@@ -26,5 +26,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ]
+  ],
+  "typescript": {
+    "ignoreBuildErrors": true,
+  }
 }

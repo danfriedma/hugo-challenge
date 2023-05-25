@@ -70,7 +70,7 @@ const onSubmit = async (data) => {
   const responseBody = await response.json()
 }
 
-const Application: React.FC<Props> = ({application}) => {
+const Application = ({application}) => {
   const [editing, setEditing] = useState(false)
   const [price, setPrice] = useState(undefined)
   const router = useRouter()

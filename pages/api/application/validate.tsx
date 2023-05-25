@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../../lib/prisma'
-import schema from '../../../prisma/schema.ts'
+import schema from '../../../prisma/schema.js'
 
 const validate = (obj) => {
   return schema.safeParse(obj)
@@ -28,8 +28,5 @@ export default async function handle(
       status: 'OK',
       price: (Math.random()*100).toFixed(2)
     }) :
-    res.status(400).json({
-      status: 'Error',
-      message: validation.error.message
-    })
+    res.status(400)
 }

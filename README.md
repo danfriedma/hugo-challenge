@@ -13,10 +13,10 @@ As such, there are many areas that would need attention before becoming stable p
 
 Routes are found in `pages/api`
 
-POST **api/application/create**
-PUT **api/application/update**
-GET **api/application/[id]**
-GET **api/application/validate**
+* POST **api/application/create**
+* PUT **api/application/update**
+* GET **api/application/[id]**
+* GET **api/application/validate**
 
 ## Front-end
 `/` is the homepage with form for creating the application
@@ -31,4 +31,4 @@ GET **api/application/validate**
 The postgresql database is hosted on supabase.
 The API interacts with the databse through the Prisma Client defined in `lib/prisma.ts`
 The database schema is defined in `prisma/schema.prisma`
-Validation schema is defined by zod `prisma/schema.ts` and used on the front-end and back-end.
+Validation schema is defined by zod `prisma/schema.js` and used on the front-end and back-end.

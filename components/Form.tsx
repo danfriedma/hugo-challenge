@@ -1,15 +1,12 @@
 import { useForm, useFieldArray } from 'react-hook-form';
 import { zodResolver } from "@hookform/resolvers/zod";
-import schema from '../prisma/schema.ts'
+import schema from '../prisma/schema.js'
 
 
 const InsuranceApplicationForm = ({defaultData, onSubmit, formSubmitText}) => {
   const { register, handleSubmit, control, formState: { errors } } = useForm({
     mode: 'onBlur',
-    defaultValues: defaultData ?  defaultData : {
-      vehicles: [{ vin: '', year: '', make: '', model: '' }],
-      people: []
-    },
+    defaultValues: defaultData,
     resolver: zodResolver(schema)
   });
 
@@ -128,22 +125,30 @@ const InsuranceApplicationForm = ({defaultData, onSubmit, formSubmitText}) => {
       <div>
         <label htmlFor="street">Street Address</label>
         <input type="text" id="street" {...register("address.street")} />
-        {errors.address && errors.address.street && <p className="error-message">{errors.address.street.message}</p>}
+        {
+          // {errors.address && errors.address.street && <p className="error-message">{errors.address.street.message}</p>}
+        }
       </div>
       <div>
         <label htmlFor="city">City</label>
         <input type="text" id="city" {...register("address.city")} />
-        {errors.address && errors.address.city && <p className="error-message">{errors.address.city.message}</p>}
+        {
+          // {errors.address && errors.address.city && <p className="error-message">{errors.address.city.message}</p>}
+        }
       </div>
       <div>
         <label htmlFor="state">State</label>
         <input type="text" id="state" {...register("address.state")} />
-        {errors.address && errors.address.state && <p className="error-message">{errors.address.state.message}</p>}
+        {
+          //errors.address && errors.address.state && <p className="error-message">{errors.address.state.message}</p>
+        }
       </div>
       <div>
         <label htmlFor="zipcode">Zip Code</label>
         <input type="text" id="zipcode" {...register("address.zipcode")} />
-        {errors.address && errors.address.zipcode && <p className="error-message">{errors.address.zipcode.message}</p>}
+        {
+          //errors.address && errors.address.zipcode && <p className="error-message">{errors.address.zipcode.message}</p>
+        }
       </div>
       {
         <Vehicles control={control}/>
