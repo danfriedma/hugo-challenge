@@ -38,10 +38,56 @@ const Layout: React.FC<Props> = (props) => (
       button {
         cursor: pointer;
       }
-    `}</style>
-    <style jsx>{`
+
+      .form {
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+      }
+
+      .form div {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        margin: .1rem 0rem;
+      }
+
+      .error-message {
+        color: red;
+        pad
+      }
+
+      button {
+        margin: .5rem 0rem;
+      }
+
+      p {
+        margin: .1rem 0rem;
+      }
+
       .layout {
         padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .quote {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        top
+      }
+
+      .border {
+        border: 1px solid black;
+        padding: 0.1rem;
       }
     `}</style>
   </div>
